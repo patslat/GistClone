@@ -4,5 +4,5 @@ GistApp::Application.routes.draw do
   resources :gists
 
 
-  root :to => "gists#index"
+  root :to => "root#root"
 end
