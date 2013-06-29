@@ -1,2 +1,22 @@
 <p><%= gist.escape('title') %></p>
-<button id="favorite">Favorite</button>
+
+<% if (gist.get('favorite').id > 0) { %>
+	<div>
+		<button id="favorite" class="btn favorite favorited">
+			Favorite
+		</button>
+		<button id="unfavorite" class="btn favorite">
+			Unfavorite
+		</button>
+	</div>
+
+<% } else { %>
+	<div>
+		<button id="favorite" class="btn favorite">
+			Favorite
+		</button>
+		<button id="unfavorite" class="btn favorite favorited">
+			Unfavorite
+		</button>
+	</div>
+<% } %>

@@ -3,7 +3,9 @@
 <ul>
 	<% gists.each(function(gist){ %>
 		<li>
-			<a href='#/gists/<%= gist.id %>'><%= gist.escape("title") %></a>
+			<a id="gist-link" data-id="<%= gist.id %>" href='#'>
+				<%= gist.escape("title") %>
+			</a>
 		</li>
-	<% }) %>
+	<% }); %>
 </ul>

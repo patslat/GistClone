@@ -6,8 +6,7 @@ GistApp.Routers.Gists = Backbone.Router.extend({
 	},
 
 	routes: {
-		"": "index",
-		"gists/:id": "show"
+		"": "index"
 	},
 
 	index: function () {
@@ -18,11 +17,4 @@ GistApp.Routers.Gists = Backbone.Router.extend({
 		this.$rootEl.html(view.render().$el);
 	},
 
-	show: function (id) {
-		var gist = this.collection.get(id);
-		var view = new GistApp.Views.GistShow({
-			model: gist
-		});
-		this.$rootEl.html(view.render().$el);
-	}
 });

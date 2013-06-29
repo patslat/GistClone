@@ -1,7 +1,7 @@
 class GistsController < ApplicationController
 
   def index
-    @gists = Gist.all
-    render :json => @gists
+    @gists = current_user.gists.includes(:favorite)
+    render :json => @gists.to_json(:include => :favorite)
   end
 end
